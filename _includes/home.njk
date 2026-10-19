@@ -1,0 +1,68 @@
+---
+layout: base.njk
+---
+{%- macro projectCard(project, index) -%}
+<article class="card">
+  <p class="card-index">{{ index if index > 9 else "0" ~ index }} / {{ project.data.context }}</p>
+  <h3 class="card-title">{{ project.data.title }}</h3>
+  <div class="card-body prose">{{ project.content | safe }}</div>
+  {% if project.data.stack.length %}
+  <ul class="tags">
+    {% for item in project.data.stack %}<li>{{ item }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+  {% if project.data.url %}
+  <a class="link-arrow card-link" href="{{ project.data.url }}">View project</a>
+  {% endif %}
+</article>
+{%- endmacro -%}
+
+{%- set cv = collections.cv | first -%}
+
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">{{ eyebrow }}</p>
+    <h1 class="hero-title">{{ title }}</h1>
+    <div class="hero-lead prose">{{ content | safe }}</div>
+    <div class="actions">
+      <a class="btn btn-primary" href="#professional">See projects</a>
+      <a class="btn btn-secondary" href="#cv">Read my CV</a>
+    </div>
+  </div>
+</section>
+
+<section id="cv" class="section">
+  <div class="container">
+    <p class="eyebrow">01 / CV</p>
+    <h2 class="section-title">Curriculum vitae</h2>
+    {% if cv.data.summary %}<p class="reading">{{ cv.data.summary }}</p>{% endif %}
+    <div class="cv prose">{{ cv.content | safe }}</div>
+    {% if cv.data.file %}
+    <div class="actions">
+      <a class="btn btn-secondary" href="{{ cv.data.file }}">Download CV (PDF)</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section id="professional" class="section band band--dark">
+  <div class="container">
+    <p class="eyebrow">02 / Professional</p>
+    <h2 class="section-title">Professional work</h2>
+    <p class="reading">{{ sections.professional }}</p>
+    <div class="card-grid">
+      {% for project in collections.professional | sort(false, false, "data.order") %}{{ projectCard(project, loop.index) }}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="personal" class="section band band--wash">
+  <div class="container">
+    <p class="eyebrow">03 / Personal</p>
+    <h2 class="section-title">Personal projects</h2>
+    <p class="reading">{{ sections.personal }}</p>
+    <div class="card-grid">
+      {% for project in collections.personal | sort(false, false, "data.order") %}{{ projectCard(project, loop.index) }}{% endfor %}
+    </div>
+  </div>
+</section>

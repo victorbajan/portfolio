@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
+  <style>
+{% include "style.css" %}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a class="site-name" href="#top">Victor Bajan</a>
+      <nav class="site-nav" aria-label="Sections">
+        <a href="#cv">CV</a>
+        <a href="#professional">Professional</a>
+        <a href="#personal">Personal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer band band--dark">
+    <div class="container site-footer-inner">
+      <p class="site-footer-name">Victor Bajan</p>
+      <ul class="site-footer-links">
+        {% for link in links %}
+        <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+        {% endfor %}
+      </ul>
+      <p class="site-footer-copy">&copy; {{ site.year }} Victor Bajan</p>
+    </div>
+  </footer>
+</body>
+</html>

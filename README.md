@@ -12,6 +12,16 @@ npx @11ty/eleventy --serve
 
 The generated site is written to `_site/`.
 
+## Editing content
+
+All content is Markdown; the layouts in `_includes/` turn it into the page.
+
+- `index.md` — page title, intro text, section blurbs and footer links.
+- `cv/cv.md` — the CV. Use `##` for sections, `###` for each role followed by a date line, and a bullet list for skills.
+- `professional/*.md` and `personal/*.md` — one file per project. Front matter sets `title`, `context`, `order`, `stack` and an optional `url`; the body is the card text.
+
+To add a project, copy an existing file in the right folder and edit it.
+
 ## Deployment
 
 Push to `main` to build and deploy the site. The Pages workflow is in `.github/workflows/pages.yml`.
