@@ -13,7 +13,7 @@
   </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header band--dark">
     <div class="container site-header-inner">
       <a class="site-name" href="#top">Victor Bajan</a>
       <nav class="site-nav" aria-label="Sections">
@@ -39,5 +39,22 @@
       <p class="site-footer-copy">&copy; {{ site.year }} Victor Bajan</p>
     </div>
   </footer>
+
+  <script>
+    // Header goes dark over light sections and light over dark ones.
+    const header = document.querySelector(".site-header");
+    const darkBands = document.querySelectorAll(".band--dark:not(.site-header)");
+    function updateHeader() {
+      const y = header.offsetHeight / 2;
+      const overDark = [...darkBands].some((el) => {
+        const r = el.getBoundingClientRect();
+        return r.top <= y && r.bottom > y;
+      });
+      header.classList.toggle("band--dark", !overDark);
+    }
+    addEventListener("scroll", updateHeader, { passive: true });
+    addEventListener("resize", updateHeader);
+    updateHeader();
+  </script>
 </body>
 </html>

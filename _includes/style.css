@@ -15,7 +15,7 @@
   --gutter: 48px;
 }
 
-/* No animations or transitions anywhere. */
+/* No animations or transitions anywhere (except the header, below). */
 *, *::before, *::after {
   box-sizing: border-box;
   animation: none !important;
@@ -47,7 +47,16 @@ a { color: inherit; }
   top: 0;
   z-index: 10;
   background: var(--bg);
+  color: var(--ink);
   border-bottom: 1px solid var(--rule);
+}
+/* The one exception to the no-transitions rule: the header fades between its
+   dark look (over light sections) and light look (over dark sections). */
+.site-header, .site-header a {
+  transition: background-color .4s ease, color .4s ease, border-color .4s ease !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header, .site-header a { transition: none !important; }
 }
 .site-header-inner {
   display: flex;
