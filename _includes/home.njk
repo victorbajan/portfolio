@@ -20,14 +20,17 @@ layout: base.njk
 {%- set cv = collections.cv | first -%}
 
 <section class="hero">
-  <div class="container">
-    <p class="eyebrow">{{ eyebrow }}</p>
-    <h1 class="hero-title">{{ title }}</h1>
-    <div class="hero-lead prose">{{ content | safe }}</div>
-    <div class="actions">
-      <a class="btn btn-primary" href="#professional">See projects</a>
-      <a class="btn btn-secondary" href="#cv">Read my CV</a>
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">{{ eyebrow }}</p>
+      <h1 class="hero-title">{{ title }}</h1>
+      <div class="hero-lead prose">{{ content | safe }}</div>
+      <div class="actions">
+        <a class="btn btn-primary" href="#professional">See projects</a>
+        <a class="btn btn-secondary" href="#cv">Read my CV</a>
+      </div>
     </div>
+    {% if photo %}<img class="hero-photo" src="{{ photo }}" alt="Portrait of Victor Bajan" width="886" height="886">{% endif %}
   </div>
 </section>
 

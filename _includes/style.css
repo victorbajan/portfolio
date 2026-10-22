@@ -105,6 +105,20 @@ a { color: inherit; }
 .hero { padding: 120px 0 96px; border-bottom: 1px solid var(--rule); }
 .hero-title { font-size: clamp(48px, 8vw, 96px); letter-spacing: -.01em; }
 .hero-lead { max-width: 560px; margin: 0 0 32px; font-size: 20px; }
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 380px);
+  align-items: center;
+  gap: 64px;
+}
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+}
 
 /* Buttons */
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
@@ -240,6 +254,8 @@ a { color: inherit; }
   .site-nav { gap: 16px; }
   .site-nav a { font-size: 12px; letter-spacing: .08em; }
   .hero { padding: 72px 0 56px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-photo { max-width: 280px; order: -1; }
   .section { padding: 64px 0; }
   .card { padding: 24px; }
 }

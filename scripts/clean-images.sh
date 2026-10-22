@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Strip all metadata (GPS, camera, dates, XMP, ...) from images, keeping only Orientation
-# so phone photos still display the right way up.
+# (so phone photos display the right way up) and the colour profile.
 # Usage: scripts/clean-images.sh [paths...]   (default: images/)
 set -euo pipefail
 
@@ -11,5 +11,5 @@ fi
 
 [ $# -eq 0 ] && set -- images
 
-exiftool -r -all= -tagsfromfile @ -Orientation -overwrite_original \
+exiftool -r -all= -tagsfromfile @ -Orientation -ICC_Profile -overwrite_original \
   -ext jpg -ext jpeg -ext png -ext webp -ext gif -ext tif -ext tiff -ext heic "$@"
