@@ -117,11 +117,7 @@ a { color: inherit; }
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
-  border: 3px solid var(--ink);
-  /* Hero padding is 120px top / 96px bottom; shift up by half the difference
-     so the photo sits midway between the header rule and the hero rule. */
-  position: relative;
-  top: -12px;
+  border: 3px solid var(--accent);
 }
 
 /* Buttons */
@@ -259,7 +255,7 @@ a { color: inherit; }
   .site-nav a { font-size: 12px; letter-spacing: .08em; }
   .hero { padding: 72px 0 56px; }
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .hero-photo { max-width: 280px; order: -1; top: 0; }
+  .hero-photo { max-width: 280px; order: -1; }
   .section { padding: 64px 0; }
   .card { padding: 24px; }
 }
