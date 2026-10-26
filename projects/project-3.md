@@ -1,19 +1,9 @@
 ---
-title: Project name
+title: CoreXY Custom 3D Printer
 context: Side project · 2023
 order: 3
-summary: What you built, why, and what you learned along the way.
+summary: An Ender 5 redesigned and retrofitted to run CoreXY kinematics.
 stack: [Tag, Tag, Tag]
 url: ""
 ---
-## Overview
-
-What you built and the problem it solves.
-
-## How it works
-
-The interesting technical parts: architecture, tools, trade-offs.
-
-## What I learned
-
-What went well, what didn't, and what you would do next.
+Designed and retrofitted an Ender 5 3D Printer to run coreXY kinematics

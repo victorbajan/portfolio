@@ -1,19 +1,9 @@
 ---
-title: Project name
+title: Aro Restoration
 context: Side project · 2025
 order: 1
-summary: What you built, why, and what you learned along the way.
+summary: Restoring an Aro 10.4 off-roader, documented step by step.
 stack: [Tag, Tag, Tag]
 url: ""
 ---
-## Overview
-
-What you built and the problem it solves.
-
-## How it works
-
-The interesting technical parts: architecture, tools, trade-offs.
-
-## What I learned
-
-What went well, what didn't, and what you would do next.
+You can find here my progress on my restoration of my Aro 10.4
