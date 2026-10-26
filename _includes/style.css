@@ -257,14 +257,25 @@ a { color: inherit; }
 .site-footer-links a:hover { color: var(--accent); }
 .site-footer-copy { font-size: 14px; color: var(--ink-mute); }
 
+/* Tablets: stack the hero before the photo squeezes the title. */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-photo { max-width: 280px; order: -1; }
+}
+
 /* Narrow screens */
 @media (max-width: 760px) {
   :root { --gutter: 20px; }
   .site-nav { gap: 16px; }
   .site-nav a { font-size: 12px; letter-spacing: .08em; }
   .hero { padding: 72px 0 56px; }
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .hero-photo { max-width: 280px; order: -1; }
   .section { padding: 64px 0; }
   .card { padding: 24px; }
+}
+
+/* Small phones: the nav moves to its own row under the name. */
+@media (max-width: 480px) {
+  .site-header-inner { flex-wrap: wrap; gap: 0; min-height: 0; padding-top: 12px; }
+  .site-nav { width: 100%; justify-content: space-between; }
+  .site-nav a { padding: 12px 0; }
 }
