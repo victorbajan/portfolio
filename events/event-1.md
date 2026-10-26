@@ -1,6 +1,6 @@
 ---
-title: Project name
-context: Company · 2025
+title: NeoSpace Challenge
+context: Luxembourg · 2025
 order: 1
 stack: [Tag, Tag, Tag]
 url: ""
