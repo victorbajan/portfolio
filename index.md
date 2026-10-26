@@ -11,7 +11,7 @@ links:
   - label: GitHub
     url: https://github.com/victorbajan
   - label: LinkedIn
-    url: "#"
+    url: https://www.linkedin.com/in/victor-bajan-b40834258/
   - label: Email
     url: mailto:vb.bajan@gmail.com
 ---
