@@ -1,1 +1,1 @@
-{ "tags": "events", "permalink": false }
+{ "tags": "events", "layout": "entry.njk", "section": "Events" }

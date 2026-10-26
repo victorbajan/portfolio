@@ -1,0 +1,24 @@
+---
+layout: base.njk
+---
+{%- set anchor = section | lower -%}
+
+<article class="section entry">
+  <div class="container">
+    <a class="back-link" href="/#{{ anchor }}">&larr; All {{ anchor }}</a>
+    <p class="eyebrow">{{ section }} / {{ context }}</p>
+    <h1 class="section-title">{{ title }}</h1>
+    {% if summary %}<p class="reading">{{ summary }}</p>{% endif %}
+    {% if stack.length %}
+    <ul class="tags entry-tags">
+      {% for item in stack %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    <div class="entry-body prose">{{ content | safe }}</div>
+    {% if url %}
+    <div class="actions">
+      <a class="btn btn-primary" href="{{ url }}" target="_blank" rel="noopener noreferrer">{{ "Visit event" if anchor == "events" else "Visit project" }} &#8599;</a>
+    </div>
+    {% endif %}
+  </div>
+</article>

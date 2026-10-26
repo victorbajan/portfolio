@@ -4,16 +4,14 @@ layout: base.njk
 {%- macro projectCard(project, index, linkLabel = "View project") -%}
 <article class="card">
   <p class="card-index">{{ index if index > 9 else "0" ~ index }} / {{ project.data.context }}</p>
-  <h3 class="card-title">{{ project.data.title }}</h3>
-  <div class="card-body prose">{{ project.content | safe }}</div>
+  <h3 class="card-title"><a class="card-cover" href="{{ project.url }}">{{ project.data.title }}</a></h3>
+  {% if project.data.summary %}<p class="card-body">{{ project.data.summary }}</p>{% endif %}
   {% if project.data.stack.length %}
   <ul class="tags">
     {% for item in project.data.stack %}<li>{{ item }}</li>{% endfor %}
   </ul>
   {% endif %}
-  {% if project.data.url %}
-  <a class="link-arrow card-link" href="{{ project.data.url }}">{{ linkLabel }}</a>
-  {% endif %}
+  <span class="link-arrow card-link" aria-hidden="true">{{ linkLabel }}</span>
 </article>
 {%- endmacro -%}
 

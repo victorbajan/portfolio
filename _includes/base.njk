@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title }}</title>
-  <meta name="description" content="{{ description }}">
+  <title>{{ title }}{% if page.url != "/" %} · Victor Bajan{% endif %}</title>
+  <meta name="description" content="{{ description or summary }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
@@ -15,11 +15,11 @@
 <body>
   <header class="site-header band--dark">
     <div class="container site-header-inner">
-      <a class="site-name" href="#top">Victor Bajan</a>
+      <a class="site-name" href="/">Victor Bajan</a>
       <nav class="site-nav" aria-label="Sections">
-        <a href="#cv">CV</a>
-        <a href="#events">Events</a>
-        <a href="#projects">Projects</a>
+        <a href="/#cv">CV</a>
+        <a href="/#events">Events</a>
+        <a href="/#projects">Projects</a>
       </nav>
     </div>
   </header>
