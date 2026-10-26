@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 ---
-{%- macro projectCard(project, index) -%}
+{%- macro projectCard(project, index, linkLabel = "View project") -%}
 <article class="card">
   <p class="card-index">{{ index if index > 9 else "0" ~ index }} / {{ project.data.context }}</p>
   <h3 class="card-title">{{ project.data.title }}</h3>
@@ -12,7 +12,7 @@ layout: base.njk
   </ul>
   {% endif %}
   {% if project.data.url %}
-  <a class="link-arrow card-link" href="{{ project.data.url }}">View project</a>
+  <a class="link-arrow card-link" href="{{ project.data.url }}">{{ linkLabel }}</a>
   {% endif %}
 </article>
 {%- endmacro -%}
@@ -54,7 +54,7 @@ layout: base.njk
     <h2 class="section-title">Events</h2>
     <p class="reading">{{ sections.events }}</p>
     <div class="card-grid">
-      {% for project in collections.events | sort(false, false, "data.order") %}{{ projectCard(project, loop.index) }}{% endfor %}
+      {% for project in collections.events | sort(false, false, "data.order") %}{{ projectCard(project, loop.index, "View event") }}{% endfor %}
     </div>
   </div>
 </section>
