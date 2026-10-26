@@ -33,7 +33,7 @@
       <p class="site-footer-name">Victor Bajan</p>
       <ul class="site-footer-links">
         {% for link in links %}
-        <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+        <li><a href="{{ link.url }}"{% if link.url.startsWith("http") %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a></li>
         {% endfor %}
       </ul>
       <p class="site-footer-copy">&copy; {{ site.year }} Victor Bajan</p>
