@@ -6,7 +6,9 @@ summary: Restoration of my Aro 10.4 off-roader, .
 stack: [Tag, Tag, Tag]
 url: ""
 ---
-One of my dream cars is an ARO 10.4, a small off-roader build during communist times in Romania. My family comes from a town where these cars were build. 
+One of my dream cars is an ARO 10.4, a small off-roader build during communist times in Romania. My family comes from a town where these cars were build.
+
+![Front of the Aro after restoration](/images/aro-front.jpeg)
 
 I had the chance to buy a model in pretty good driving conditions but it has been kept in a garage untouched for several years and I gave myself the challenge to bring this beauty to its glory years.
 
