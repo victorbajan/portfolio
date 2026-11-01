@@ -2,7 +2,7 @@
 summary: ""
 file: ""
 ---
-[vb.bajan@gmail.com](mailto:vb.bajan@gmail.com) · [victorbajan.com](https://victorbajan.com)
+[vb.bajan@gmail.com](mailto:vb.bajan@gmail.com)
 
 ## Education
 
