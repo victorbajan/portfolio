@@ -1,7 +1,7 @@
 ---
 layout: home.njk
-title: Victor Bajan's Portfolio
-description: Events, projects and CV of Victor Bajan.
+title: Portfolio
+description: Journey, side quests and CV of Victor Bajan.
 eyebrow: Projects & work
 photo: /images/victor-bajan.jpg
 sections:

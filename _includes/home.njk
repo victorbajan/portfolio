@@ -24,7 +24,7 @@ layout: base.njk
       <h1 class="hero-title">{{ title }}</h1>
       <div class="hero-lead prose">{{ content | safe }}</div>
       <div class="actions">
-        <a class="btn btn-primary" href="#projects">See projects</a>
+        <a class="btn btn-primary" href="#projects">See side quests</a>
         <a class="btn btn-secondary" href="#cv">Read my CV</a>
       </div>
     </div>
@@ -32,24 +32,10 @@ layout: base.njk
   </div>
 </section>
 
-<section id="cv" class="section">
-  <div class="container">
-    <p class="eyebrow">01 / CV</p>
-    <h2 class="section-title">Curriculum vitae</h2>
-    {% if cv.data.summary %}<p class="reading">{{ cv.data.summary }}</p>{% endif %}
-    <div class="cv prose">{{ cv.content | safe }}</div>
-    {% if cv.data.file %}
-    <div class="actions">
-      <a class="btn btn-secondary" href="{{ cv.data.file }}">Download CV (PDF)</a>
-    </div>
-    {% endif %}
-  </div>
-</section>
-
 <section id="events" class="section band band--dark">
   <div class="container">
-    <p class="eyebrow">02 / Events</p>
-    <h2 class="section-title">Events</h2>
+    <p class="eyebrow">01 / My Journey</p>
+    <h2 class="section-title">My Journey</h2>
     <p class="reading">{{ sections.events }}</p>
     <div class="card-grid">
       {% for project in collections.events | sort(false, false, "data.order") %}{{ projectCard(project, loop.index, "View event") }}{% endfor %}
@@ -59,11 +45,25 @@ layout: base.njk
 
 <section id="projects" class="section band band--wash">
   <div class="container">
-    <p class="eyebrow">03 / Projects</p>
-    <h2 class="section-title">Projects</h2>
+    <p class="eyebrow">02 / Side Quests</p>
+    <h2 class="section-title">Side Quests</h2>
     <p class="reading">{{ sections.projects }}</p>
     <div class="card-grid">
       {% for project in collections.projects | sort(false, false, "data.order") %}{{ projectCard(project, loop.index) }}{% endfor %}
     </div>
+  </div>
+</section>
+
+<section id="cv" class="section">
+  <div class="container">
+    <p class="eyebrow">03 / CV</p>
+    <h2 class="section-title">Curriculum vitae</h2>
+    {% if cv.data.summary %}<p class="reading">{{ cv.data.summary }}</p>{% endif %}
+    <div class="cv prose">{{ cv.content | safe }}</div>
+    {% if cv.data.file %}
+    <div class="actions">
+      <a class="btn btn-secondary" href="{{ cv.data.file }}">Download CV (PDF)</a>
+    </div>
+    {% endif %}
   </div>
 </section>
