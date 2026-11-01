@@ -1,8 +1,8 @@
 ---
-title: Aro Restoration
-context: Side project · 2025
+title: Car Aro Restoration
+context: Vintage car restoration · 2026
 order: 1
-summary: Restoring an Aro 10.4 off-roader, documented step by step.
+summary: Restoration of my Aro 10.4 off-roader, .
 stack: [Tag, Tag, Tag]
 url: ""
 ---

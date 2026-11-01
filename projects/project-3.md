@@ -1,5 +1,5 @@
 ---
-title: CoreXY Custom 3D Printer
+title: 3D Printer modified into CoreXY
 context: Side project · 2023
 order: 3
 summary: An Ender 5 redesigned and retrofitted to run CoreXY kinematics.
